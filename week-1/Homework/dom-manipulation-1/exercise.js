@@ -16,13 +16,42 @@ Write JavaScript below that logs:
 
 */
 
+let p_tagName = document.getElementsByTagName('p');
+console.log(p_tagName);
+
+let firstDivElement = document.querySelector('div');
+console.log(firstDivElement);
+
+const jumbotron = document.querySelector('#jumbotron-text');
+console.log(jumbotron);
+
+let primary= document.querySelector('.primary-content');
+let pElements = primary.querySelectorAll('p');
+console.log(pElements);
+
 
 /*
 Task 2
 ======
 
-When a user clicks the 'ALERT' button, an alert box should pop up with the text "Thanks for visiting Bikes for Refugees!"
+When a user clicks the 'ALERT' button, an alert box should pop up 
+with the text "Thanks for visiting Bikes for Refugees!"
 */
+
+document.getElementById('alertBtn').addEventListener('click', function(){
+    
+    alert('"Thanks for visiting Bikes for Refugees!"');
+
+});
+
+
+// --------------2ND WAY-------
+
+// document.querySelector('#alertBtn').onclick = abc;
+// function abc(){
+//     alert('"Thanks for visiting Bikes for Refugees!"');
+// }
+
 
 
 /*
