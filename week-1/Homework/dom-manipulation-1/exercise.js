@@ -16,18 +16,18 @@ Write JavaScript below that logs:
 
 */
 
-let p_tagName = document.getElementsByTagName('p');
-console.log(p_tagName);
+// let p_tagName = document.getElementsByTagName('p');
+// console.log(p_tagName);
 
-let firstDivElement = document.querySelector('div');
-console.log(firstDivElement);
+// let firstDivElement = document.querySelector('div');
+// console.log(firstDivElement);
 
-const jumbotron = document.querySelector('#jumbotron-text');
-console.log(jumbotron);
+// const jumbotron = document.querySelector('#jumbotron-text');
+// console.log(jumbotron);
 
-let primary= document.querySelector('.primary-content');
-let pElements = primary.querySelectorAll('p');
-console.log(pElements);
+// let primary= document.querySelector('.primary-content');
+// let pElements = primary.querySelectorAll('p');
+// console.log(pElements);
 
 
 /*
@@ -60,14 +60,45 @@ Task 3
 
 Write JavaScript below that changes the background colour of the page when the 'Change colour' button is clicked.
 */
+let changeColor = document.querySelector('#bgrChangeBtn');
 
+changeColor.addEventListener('click', function () {
+    document.body.style.backgroundColor = 'green';
+
+});
 
 /*
 Task 4
 ======
 
-When a user clicks the ‘Add some text’ button, a new paragraph should be added inside the section that says “LEARN MORE”
+When a user clicks the ‘Add some text’ button, a new paragraph should 
+be added inside the section that says “LEARN MORE”
 */
+
+//  document.getElementById('addTextBtn').addEventListener('click', function(){
+    
+// var node = document.createElement("P");  
+//  var textNode = document.createTextNode('“LEARN MORE”');
+//  var textInPara = node.appendChild(textNode);
+//  return document.getElementById('addTextBtn').appendChild(node);            // p<>LEARN MORE
+
+// });
+
+// --------------------------------------------------------
+
+            // -------2nd Way---------------
+
+document.getElementById('addTextBtn').onclick = myParagrarhFunc;
+
+function myParagrarhFunc(){
+    var node = document.createElement("P");  
+ var textNode = document.createTextNode('“LEARN MORE”');
+ node.appendChild(textNode); // p<>LEARN MORE 
+  return document.getElementById('addTextBtn').appendChild(node);
+}
+
+
+ 
 
 
 
