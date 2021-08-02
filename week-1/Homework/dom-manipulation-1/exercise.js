@@ -25,9 +25,9 @@ console.log(firstDivElement);
 const jumbotron = document.querySelector('#jumbotron-text');
 console.log(jumbotron);
 
-let primary= document.querySelector('.primary-content');
-let pElements = primary.querySelectorAll('p');
-console.log(pElements);
+let primary= document.querySelectorAll('.primary-content p');
+// let pElements = primary.querySelectorAll('p');
+console.log(primary);
 
 
 /*
@@ -78,9 +78,9 @@ be added inside the section that says “LEARN MORE”
  document.getElementById('addTextBtn').addEventListener('click', function(){
     
 var node = document.createElement("P");  //p tag created 
-var textNode = document.createTextNode('“LEARN MORE”') ; // text added 
+var textNode = document.createTextNode('“A new paragraph has been added to Learn More area for task 4”') ; // text added 
  node.appendChild(textNode);  // p<>LEARN MORE
- return document.querySelector('.buttons').appendChild(node);   
+ return document.querySelector('#mainArticles').prepend(node);   
 
 });
 
@@ -113,7 +113,7 @@ function myFunc(){
 
  var selectAllTags = document.querySelectorAll("a");
  selectAllTags.forEach((tag) => {
-       tag.style.fontSize = "xx-large"
+       tag.classList.add("bigSize");
    });
     
     
@@ -131,20 +131,40 @@ a new paragraph in the "LEARN MORE" section. Also clear the text inside the inpu
 */
 
 
+var targetDiv = document.getElementById('addArticleBtn');
+  targetDiv.addEventListener('click', () => {
+
+    
+    var newElementP = document.createElement("P");
+    var innText = document.querySelector('#input-p').value;
+    newElementP.textContent = innText;
+
+    var learnSection = document.querySelector('#mainArticles');
+    
+    learnSection.prepend(newElementP);
+
+    document.getElementById('input-p').value = "";
+    
+    
+
+  });
 
 
 
-var targetDiv = document.getElementById('addArticleBtn').addEventListener('click', newParagraph);
-function newParagraph(){
-    var newTag = document.createElement('P');
-    var newText = document.createTextNode('This is a new a paragraph !!');
-    newTag.appendChild(newText);
-    console.log(newTag);
+// ----------------------------------------------------------------
 
-var inputAtFirst = document.getElementById('mainArticles');
-  let result = inputAtFirst.insertBefore(newTag, inputAtFirst.childNodes[1]);
-result.style.color = 'red';
-}
+
+// var targetDiv = document.getElementById('addArticleBtn').addEventListener('click', newParagraph);
+// function newParagraph(){
+//     var newTag = document.createElement('P');
+//     var newText = document.createTextNode('This is a new a paragraph !!');
+//     newTag.appendChild(newText);
+//     console.log(newTag);
+
+// var inputAtFirst = document.getElementById('mainArticles');
+//   let result = inputAtFirst.insertBefore(newTag, inputAtFirst.childNodes[0]);
+// result.style.color = 'red';
+// }
 
 /*
 Task 7
@@ -158,37 +178,39 @@ The next color when you are in the last color of the array will be the first col
 
 
 
-document.getElementById('bgrChangeBtn').addEventListener('click', function(){
+// document.getElementById('bgrChangeBtn').addEventListener('click', function(){
 
-    var arrColors = ['red', 'green', 'blue', 'black', 'yellow'];
-    var randomColor =   Math.floor(Math.random() * arrColors.length);
+//     var arrColors = ['red', 'green', 'blue', 'black', 'yellow'];
+//     var randomColor =   Math.floor(Math.random() * arrColors.length);
 
         
-     var result = arrColors[randomColor];
+//      var result = arrColors[randomColor];
 
-     console.log()
+//      console.log()
 
    
-     document.body.style.backgroundColor = result ;
-     console.log(result);
+//      document.body.style.backgroundColor = result ;
+//      console.log(result);
     
 
    
-});
+// });
 
-// var randomize = Math.floor(Math.random()*myColors.length);
-
-
+// -------------------------------------------------------
 
 
+var arrColors = ['red', 'green', 'blue', 'black', 'yellow'];
+let index = 0;
+document.getElementById('bgrChangeBtn').addEventListener('click', colorFunc);
 
-// var colorsArray = ['red', 'green'];
-// // document.getElementById('bgrChangeBtn').addEventListener('click', randomColorChange);
+function colorFunc(){
 
-// function randomColorChange(){
-//    var rotateColors = colorsArray.map(color => color = color);
     
-// console.log(rotateColors);
-// }
+    if(index > (arrColors.length - 1)){
+        index = 0;
+    }
 
-// randomColorChange();
+    document.body.style.backgroundColor = arrColors[index];
+    index++;
+}
+        
