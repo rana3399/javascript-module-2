@@ -15,6 +15,21 @@
  */
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+
+  arrayOfPeople.forEach((people) =>  {
+    let h1Tag = document.createElement('h1');
+    content.appendChild(h1Tag);
+    h1Tag.innerHTML = people.name;
+  
+  });
+
+  arrayOfPeople.forEach((people) => {
+    h2Tag = document.createElement('h2');
+    content.appendChild(h2Tag);
+    h2Tag.innerHTML = people.job;
+  })
+  
 }
 
 /**
@@ -24,14 +39,33 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
-function exerciseTwo(shopping) {
+
+ 
+
+function exerciseTwo(shoppingItem) {
   //Write your code in here
+
+  let content = document.querySelector("#content");
+  let ulNode = document.createElement('ul');
+  content.appendChild(ulNode); 
+
+shoppingItem.forEach((item) => {
+  let liNode = document.createElement('li')  // creating li 
+   liNode.innerHTML = item;   // access to HTML and submitting items 
+  ulNode.appendChild(liNode)
+
+
+})
+
+  
+
+  
 }
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
 
-    const books = [
+  const books = [
         {
             title: "The Design of Everyday Things",
             author: "Don Norman",
@@ -49,6 +83,8 @@ function exerciseTwo(shopping) {
         }
     ];
 
+
+    
     Iterate through the array of books.
     - For each book, create a <p> element with the book title and author and append it to the page.
     - Use a <ul> and <li> to display the books.
@@ -59,6 +95,8 @@ function exerciseTwo(shopping) {
 **/
 function exerciseThree(books) {
   //Write your code in here
+  books.forEach(book => console.log(book))
+  let pEl = document.createElement('p')
 }
 
 //
@@ -76,6 +114,7 @@ let people = [
   { name: "Joanna", job: "Student" },
   { name: "Boris", job: "Prime Minister" }
 ];
+
 
 exerciseOne(people);
 

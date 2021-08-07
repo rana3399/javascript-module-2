@@ -8,6 +8,8 @@ let person = {
     name: "Alice",
     friends: ["John", "Nina"],
   };
+
+  let a = person.friends.push('Bob');
   
   /*
   DO NOT EDIT ANYTHING BELOW THIS LINE

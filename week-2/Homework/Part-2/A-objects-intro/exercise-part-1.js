@@ -16,4 +16,21 @@ var car = {
 };
 
 */
+ let mobile = {
+     brand: 'samsung',
+     color: {
+         galaxyColor: 'black',
+         galaxyS7Color: 'red',
+     },
+     availability: 5,
+ }
 
+console.log(mobile)
+
+const myHouse = {
+    location: 'Barcelona',
+    address: 'El Raval',
+    rent: 500,
+    comfortable: true
+}
+console.log("is your house comfortable : " + myHouse.comfortable)

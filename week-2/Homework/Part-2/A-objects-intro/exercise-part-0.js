@@ -10,4 +10,13 @@ let laptop = {
     brand: "Lenovo",
     screenSize: 13,
     isTouchscreen: true,
+    colors: {
+      oldColors: 'black',
+      newColor: 'blue',
+    },
+    price: '245 euro',
+
+
   };
+
+  console.log(laptop.colors);
