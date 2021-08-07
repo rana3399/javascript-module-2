@@ -9,20 +9,20 @@ const greenBtn = document.getElementById('greenBtn');
 // var anotherColors = ['blue',  'green', 'black',];
 
 
-orangeBtn.addEventListener('click', ()=> changeColor('#f0ad4e', '#5751fd', '#31b0d5'));
-blueBtn.addEventListener('click', () => changeColor ('#588fbd', '#ffa500', 'white'));
-greenBtn.addEventListener('click', ()=> changeColor( '#87ca8a', ' black', '#8c9c08'));
+// orangeBtn.addEventListener('click', ()=> changeColor('#f0ad4e', '#5751fd', '#31b0d5'));
+// blueBtn.addEventListener('click', () => changeColor ('#588fbd', '#ffa500', 'white'));
+// greenBtn.addEventListener('click', ()=> changeColor( '#87ca8a', ' black', '#8c9c08'));
 
-function changeColor(jumColor, donateColor, volColor){
-        jumbotron.style.backgroundColor = jumColor;
-        donateAbike.style.backgroundColor = donateColor;
-        volanteerBtn.style.backgroundColor = volColor;
+// function changeColor(jumColor, donateColor, volColor){
+//         jumbotron.style.backgroundColor = jumColor;
+//         donateAbike.style.backgroundColor = donateColor;
+//         volanteerBtn.style.backgroundColor = volColor;
         
     
-}
+// }
 
 
-console.log(donateAbike);
+// console.log(donateAbike);
 
 
 // --------------------------------------------------------
@@ -62,20 +62,96 @@ console.log(donateAbike);
 
 // Part 2
 
+
+
+
+
+let submitBtn = document.querySelector('form');
+
 let emailNode = document.getElementById('exampleInputEmail1');
 let nameNode = document.getElementById("example-text-input");
-let textAreaNode  = document.getElementsById('exampleTextarea')
-let form = document.querySelector('form');
-console.log(form);
+let textAreaNode  = document.querySelector('#exampleTextarea');
 
-form.addEventListener('submit', (e) => {
-    let massages = [];
-    if(emailNode.value === "" || emailNode.value === null){
-        massages.push('Email can not be empty.');
+emailNode.addEventListener('change', changeBGCcolor);
+nameNode.addEventListener('change', changeBGCcolor);
+textAreaNode.addEventListener('change', changeBGCcolor);
+
+    function changeBGCcolor(event){
+    event.target.classList.remove('redBGCcolor');
+    event.target.classList.add('greenBGCcolor');
+
     }
 
+  submitBtn.addEventListener('submit', checkUserInPut)
+  
+ 
+    function checkUserInPut (e){
+      e.preventDefault();
 
-e.preventDefault();
+
+    let isEmailValid = emailNode.value.trim().includes('@');
+    let isNameAreaValid = nameNode.value.trim().length > 0;
+    let isTextAreaValid = textAreaNode.value.trim() > 0;
+    
+
+    if(isEmailValid && isNameAreaValid && isTextAreaValid) {
+
+      emailNode.value = "";
+      nameNode.value = "";
+      textAreaNode.value = "";
+    
+       emailNode.classList.remove('redBGCcolor');
+       emailNode.classList.add('greenBGCcolor');
+
+       nameNode.classList.remove('redBGCcolor');
+       nameNode.classList.add('greenBGCcolor');
+     
+       textAreaNode.classList.remove('redBGCcolor');
+       textAreaNode.classList.add('greenBGCcolor');
+
+       alert('Thanks for submitting the form.');
+
+    }else{
+
+      if(!isTextAreaValid){
+        textAreaNode.classList.remove('greenBGCcolor');
+        textAreaNode.classList.add('redBGCcolor');
+      }
+      
+      if(!isEmailValid){
+        
+      emailNode.classList.remove('greenBGCcolor');
+       emailNode.classList.add('redBGCcolor');
+      }
+
+      if(!isNameAreaValid){
+        nameNode.classList.remove('greenBGCcolor');
+        nameNode.classList.add('redBGCcolor');
+      }
+     
+       
+    }
+
+    }
 
    
-})
+  
+
+
+    // if(emailNode.length < 3 && isEmailContain < 0){
+    // console.log('Not a valid email');
+    // }else{
+    //     console.log('its valid');
+    // }
+
+// submitButton.addEventListener('click', () => {
+    
+    
+//         if(emailNode.length < 3 && isEmailContain < 0){
+//             console.log('Not a valid email');
+//         }
+//         else if(emailNode === "" || emailNode === null){
+//             console.log('Email can not be empty.');
+//         }
+       
+// })
