@@ -24,13 +24,19 @@ DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
+let persons = [person1, person2, person3];   // Complete here
 
-let persons = // Complete here
+function nameFunc(personArray){
+return personArray.name;
+}
+let personNames = persons.map(nameFunc) // Complete here
 
-let personNames = // Complete here
+let personsYoungerThan28YearsOld = persons.filter(ageCheck);  // Complete here
 
-let personsYoungerThan28YearsOld = // Complete here
+function ageCheck (personAge){
+    return personAge.age < 28;
 
+}
 
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE

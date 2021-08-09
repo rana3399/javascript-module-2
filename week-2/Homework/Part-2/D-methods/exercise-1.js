@@ -10,7 +10,9 @@ let person = {
     name: "Alice",
     age: 25,
     greet: () => 'Hello everybody.',
-    sayName: ()=> `My name is ${this.name}`
+    sayName: ()=> {
+      return `My name is ${this.name}`;
+    }
   };
   
   /*

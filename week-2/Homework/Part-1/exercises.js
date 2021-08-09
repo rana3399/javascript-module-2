@@ -18,16 +18,16 @@ function exerciseOne(arrayOfPeople) {
 
 
   arrayOfPeople.forEach((people) =>  {
-    let h1Tag = document.createElement('h1');
-    content.appendChild(h1Tag);
-    h1Tag.innerHTML = people.name;
+    const {name, job} = people; 
+    content.appendChild(document.createElement('h1')).textContent = name;
   
   });
 
   arrayOfPeople.forEach((people) => {
+    const {name , job} = people;
     h2Tag = document.createElement('h2');
     content.appendChild(h2Tag);
-    h2Tag.innerHTML = people.job;
+    h2Tag.innerHTML = job;
   })
   
 }
@@ -94,10 +94,14 @@ shoppingItem.forEach((item) => {
 **/
 function exerciseThree(books) {
   //Write your code in here
-  books.forEach(book => console.log(book))
-  let pEl = document.createElement('p')
-  let ulEl = document.createElement('ul')
-  let liEl = document.createElement('li')
+  books.forEach((book) =>{
+   elementP =  document.createElement('p')
+   elementUL =  document.createElement('ul')
+
+
+
+  })
+  
 }
 
 //

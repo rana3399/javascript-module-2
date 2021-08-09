@@ -25,8 +25,10 @@ let newCurrentOwner = {
 */
 house.currentOwner.firstName = newCurrentOwner.firstName;
 house.currentOwner.lastName = newCurrentOwner.lastName;
-house.previousOwners[1] = "Stephen B.";
-house['isForSale'] = false;
+console.log(newCurrentOwner)
+console.log(house.currentOwner)
+// house.previousOwners[1] = "Stephen B.";
+// house['isForSale'] = false;
 
 
 

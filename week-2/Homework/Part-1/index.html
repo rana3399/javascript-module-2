@@ -13,33 +13,74 @@
       -->
     </div>
 
-    <!-- <script src="exercises.js"></script> -->
-    <script>
+    <script src="exercises.js"></script>
+    <!-- <script>
 
-let person1 = {
-name: "Alice",
-age: 25
+/*
+An array of travel destinations is defined below.
+Each destination has a name, a distance from Glasgow, and a list 
+of transportations available to go there.
+
+1) Filter the travelDestinations array to return all destination names reachable within 500 kms.
+2) Find a destination name reachable by ferry.
+3) Print in the console all the destination names more than 300 kms far away and reachable by train.
+*/
+
+
+let destination1 = {
+    destinationName: "Edinburgh",
+    distanceKms: 80,
+    transportations: ["car", "bus", "train"]
 };
 
-let person2 = {
-    name: "Bob",
-    age: 30
+let destination2 = {
+    destinationName: "London",
+    distanceKms: 650,
+    transportations: ["car", "bus", "train"]
 };
 
-let person3 = {
-    name: "John",
-    age: 20
+let destination3 = {
+    destinationName: "Paris",
+    distanceKms: 900,
+    transportations: ["train", "plane"]
 };
-let nameArry1 = Object.keys(person1);
-let nameArryValue = Object.values(person1);
 
-let nameEntries = Object.entries(person1)
+let destination4 = {
+    destinationName: "Dublin",
+    distanceKms: 350,
+    transportations: ["plane", "ferry"]
+};
+
+let travelDestinations = [destination1, destination2, destination3, destination4];
+
+function checkKms (travelDestinations){
+    return travelDestinations.distanceKms <=500
+}
+
+/*
+DO NOT EDIT ANYTHING ABOVE THIS LINE
+WRITE YOUR CODE BELOW
+*/
 
 
-console.log(nameArry1);
-console.log(nameArryValue);
+let destinationNamesWithin500Kms = travelDestinations.filter(checkKms); // Complete here
 
-console.log(nameEntries)
-    </script>
+let destinationNameReachableByFerry = travelDestinations.find(isFerry)  // Complete here
+function isFerry (travelDestinations){
+    return travelDestinations.transportations == "ferry";
+}
+console.log(destinationNameReachableByFerry)
+// let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+
+
+/*
+DO NOT EDIT ANYTHING BELOW THIS LINE
+*/
+
+console.log(`Question 1) Expected result: Edinburgh,Dublin, actual result: ${destinationNamesWithin500Kms}`);
+console.log(`Question 2) Expected result: Dublin, actual result: ${destinationNameReachableByFerry}`);
+// console.log(`Question 3) Expected result: London,Paris, actual result:  ${destinationNamesMoreThan300KmsAwayByTrain}`);
+   
+    </script> -->
   </body>
 </html>
