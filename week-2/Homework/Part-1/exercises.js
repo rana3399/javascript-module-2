@@ -40,7 +40,6 @@ function exerciseOne(arrayOfPeople) {
  *
  */
 
- 
 
 function exerciseTwo(shoppingItem) {
   //Write your code in here
@@ -97,6 +96,8 @@ function exerciseThree(books) {
   //Write your code in here
   books.forEach(book => console.log(book))
   let pEl = document.createElement('p')
+  let ulEl = document.createElement('ul')
+  let liEl = document.createElement('li')
 }
 
 //
