@@ -23,12 +23,13 @@ let newCurrentOwner = {
 
   WRITE YOUR CODE BELOW
 */
-house.currentOwner.firstName = newCurrentOwner.firstName;
-house.currentOwner.lastName = newCurrentOwner.lastName;
-console.log(newCurrentOwner)
-console.log(house.currentOwner)
-// house.previousOwners[1] = "Stephen B.";
-// house['isForSale'] = false;
+house.currentOwner = newCurrentOwner;
+// house.currentOwner.firstName = newCurrentOwner.firstName;
+// house.currentOwner.lastName = newCurrentOwner.lastName;
+// console.log(newCurrentOwner)
+// console.log(house.currentOwner)
+house.previousOwners[1] = "Stephen B.";
+house['isForSale'] = false;
 
 
 

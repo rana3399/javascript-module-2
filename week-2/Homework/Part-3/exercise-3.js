@@ -15,9 +15,29 @@ let coffeeMachine = {
       blackCoffee: 1.5,
       flatWhite: 3.0,
     },
+
+
     insertedAmount: 0,
-    insertMoney: function (amount) {},
-    getCoffee: function (coffee) {},
+    insertMoney: function (amount) {
+      return this.insertedAmount = this.insertedAmount + amount
+    },
+
+
+    getCoffee: function (coffee) {
+      let keys = Object.keys(this.prices)
+      let message = ""
+      keys.forEach(key => {
+        
+        if(key == coffee && this.prices[key] <= this.insertedAmount){
+         message = `Please take your ${coffee}`
+        }
+
+        else if(key == coffee && this.prices[key] > this.insertedAmount){
+          message = `Sorry you do not have enough money for a ${coffee}`
+         }
+      });
+      return message;
+    }
   };
   
   /*

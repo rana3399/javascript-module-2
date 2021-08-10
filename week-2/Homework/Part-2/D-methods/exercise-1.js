@@ -11,7 +11,7 @@ let person = {
     age: 25,
     greet: () => 'Hello everybody.',
     sayName: ()=> {
-      return `My name is ${this.name}`;
+      return `My name is ${person.name}`;
     }
   };
   
