@@ -35,30 +35,42 @@ let destination4 = {
 
 let travelDestinations = [destination1, destination2, destination3, destination4];
 
-function checkKms (travelDestinations){
-    return travelDestinations.distanceKms <=500
-}
-
 /*
 DO NOT EDIT ANYTHING ABOVE THIS LINE
 WRITE YOUR CODE BELOW
 */
 
-
-let destinationNamesWithin500Kms = travelDestinations.filter(checkKms); // Complete here
-
-let destinationNameReachableByFerry = travelDestinations.find(isFerry)  // Complete here
-function isFerry (travelDestinations){
-    return travelDestinations.transportations == "ferry";
+function checkKms (travelDestinations){
+    return travelDestinations.distanceKms <=500;
 }
-console.log(destinationNameReachableByFerry)
-// let destinationNamesMoreThan300KmsAwayByTrain = // Complete here (PRINT THE RESULT IN THE CONSOLE USING FOREACH)
+let destinationNamesWithin500Kms = travelDestinations.filter(
+    checkKms).map(dist => dist.destinationName); // Complete here
+ 
+
+let destinationNameReachableByFerry = travelDestinations.filter(
+    isFerry).map(dist => dist.destinationName)  // Complete here
+function isFerry (travelDestinations){
+    return travelDestinations.transportations.includes('ferry');
+}
 
 
+// Complete here
+let destinationNamesMoreThan300KmsAwayByTrain = travelDestinations.filter(dist => dist.transportations.includes
+    ('train')&& dist.distanceKms > 350).map(dest => dest.destinationName)
+
+   
+
+// function moreThan300Kms(travelDestinations){
+//    return travelDestinations.distanceKms > 350
+// }
+
+// function reachByTrain(travelDestinations){
+//     return travelDestinations.transportations.includes('train');
+//  }
 /*
 DO NOT EDIT ANYTHING BELOW THIS LINE
 */
 
 console.log(`Question 1) Expected result: Edinburgh,Dublin, actual result: ${destinationNamesWithin500Kms}`);
 console.log(`Question 2) Expected result: Dublin, actual result: ${destinationNameReachableByFerry}`);
-// console.log(`Question 3) Expected result: London,Paris, actual result:  ${destinationNamesMoreThan300KmsAwayByTrain}`);
+console.log(`Question 3) Expected result: London,Paris, actual result:  ${destinationNamesMoreThan300KmsAwayByTrain}`);

@@ -30,6 +30,7 @@ function nameFunc(personArray){
 return personArray.name;
 }
 let personNames = persons.map(nameFunc) // Complete here
+console.log(personNames)
 
 let personsYoungerThan28YearsOld = persons.filter(ageCheck);  // Complete here
 
