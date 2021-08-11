@@ -8,22 +8,23 @@ const studentGrades = {
     abdul: 19,
   };
 
-Object.entries(studentGrades).forEach((student) => {
-   let [name, grade] = student;
-   if(grade > 18){
-     console.log(name.toUpperCase() + '-' + grade)
-   }
- })
+// Object.entries(studentGrades).forEach((student) => {
+//    let [name, grade] = student;
+//    if(grade > 18){
+//      console.log(name.toUpperCase() + '-' + grade)
+//    }
+//  })
   
 
 
-// Object.keys(studentGrades).forEach((name) => {
-//   let grade = studentGrades[name]
-//   if(grade > 18){
-//     console.log(name.toUpperCase() + '--' + grade)
-//   }
+Object.keys(studentGrades).forEach((name) => {
+  let grade = studentGrades[name];
+  console.log(grade);
+  if(grade > 18){
+    console.log(name.toUpperCase() + '--' + grade)
+  }
   
-// })
+})
 
 // -----2nd way ----
 

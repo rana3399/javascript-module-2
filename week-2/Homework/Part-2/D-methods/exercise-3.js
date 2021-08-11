@@ -13,7 +13,7 @@ let person = {
     },
     
     celebrateBirthday: function () {
-        person.age = person.age + 1;
+        this.age = this.age + 1;
     }
 };
 

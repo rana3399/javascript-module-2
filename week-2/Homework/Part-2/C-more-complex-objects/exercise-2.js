@@ -23,9 +23,9 @@ let newCurrentOwner = {
 
   WRITE YOUR CODE BELOW
 */
-house.currentOwner = newCurrentOwner;
-// house.currentOwner.firstName = newCurrentOwner.firstName;
-// house.currentOwner.lastName = newCurrentOwner.lastName;
+ //house.currentOwner = newCurrentOwner;
+house.currentOwner.firstName = newCurrentOwner.firstName;
+house.currentOwner.lastName = newCurrentOwner.lastName;
 // console.log(newCurrentOwner)
 // console.log(house.currentOwner)
 house.previousOwners[1] = "Stephen B.";

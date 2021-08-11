@@ -58,14 +58,37 @@ let restaurant1 = {
     applicationName: "Restaurant Finder",
     applicationVersion: "1.0",
     restaurants: restaurants,
+
     findAvailableRestaurants: function (numberOfPeople) {
+      return restaurants.filter((restaurant) => {
+        let seatsAvailable = restaurant.totalSeats - restaurant.numberOfCustomers;
+        let availableRest = seatsAvailable >= numberOfPeople;
+        // console.log(availableRest) // raf for myself to understand.
+      return availableRest;
+
+      }).map(
+        restaurant => restaurant.name
+            )
       // Complete here
     },
     findRestaurantServingDish: function (dishName) {
+      return restaurants.filter((restaurant) =>{
+      return restaurant.menu.includes(dishName)
+         
+       
+      }).map(
+        resturent => resturent.name
+            )
+
       // Complete here
     },
     countNumberOfRestaurantsInArea: function (area) {
       // Complete here
+      return restaurants.filter((resturant) => {
+       let isAreaIncluded =  resturant.address.area.includes(area)
+      //  console.log(isAreaIncluded)
+        return isAreaIncluded;
+      }).length
     },
   };
   
