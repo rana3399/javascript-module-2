@@ -41,15 +41,22 @@ var writers = [
   },
 ];
 
-writers.forEach((writer) => {
-  if(writer.alive){
-    let result = `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
-  console.log(result)
-  }
+// writers.forEach((writer) => {
+//   if(writer.alive){
+//     let result = `Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`
+//   console.log(result)
+//   }
   
+// })
+
+  //------2nd way
+
+   writers.filter(writer => writer.alive)
+  .forEach(writer => {
+    const {firstName, lastName, occupation, age, alive} = writer;
+    console.log(`Hi, my name is ${writer.firstName} ${writer.lastName}. I am ${writer.age} years old, and work as a ${writer.occupation}.`)
+  }) 
   
-  
-})
 
 /*
 If you want an extra challenge, only `console.log()` the writers that are alive.
