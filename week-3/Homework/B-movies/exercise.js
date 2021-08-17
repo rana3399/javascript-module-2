@@ -31,6 +31,8 @@ TIP: Use the functions you created on tasks 1-3
 
 ================
 */
+
+
 var movies = [
   {
     title: "Color Out of Space",
@@ -59,9 +61,100 @@ var movies = [
 ];
 
 // create showMovies function
+let newDiv = document.createElement('div');
+let allMovie = document.getElementById('all-movies');
+allMovie.appendChild(newDiv);
+
+function showMovies (){
+  newDiv.innerHTML = "";
+  movies.forEach((movie) =>{
+
+    let pEl = document.createElement('p');
+    pEl.innerHTML = `${movie.title}, Directed by ${movie.director}`;
+    newDiv.appendChild(pEl);
+  });
+
+  document.querySelector('#movies-number').innerHTML = movies.length
+}
+
+  showMovies ()
 
 
 // create a new movie object for your favorite movie
 
+var newlyAddedMovie = {
+    title: "The Batman",
+    director: "Stephen S.",
+    type: "Action",
+    haveWatched: true,
+}
 
 // create addMovies function
+function addMovie(movie){
+  movies.push(movie);
+}
+
+setTimeout(showMovies, 1000);
+
+setTimeout(() => {
+  addMovie(newlyAddedMovie);
+  showMovies();
+}, 3000) 
+
+
+// create addMovies function
+let jumbotron = document.querySelector(".jumbotron");
+let form = document.createElement("form");
+
+
+for(let index = 1; index < 5; index++){
+  let input = document.createElement('input');
+  form.appendChild(input);
+
+  input.id = `input${index}`;
+
+  if(input.id === "input1"){
+    input.placeholder = "Enter movie title";
+  }
+  else if(input.id === "input2"){
+    input.placeholder = "Enter movie director";
+  }
+  else if(input.id === "input3"){
+    input.placeholder = "Enter movie type";
+  }
+  else if(input.id === "input4"){
+    input.placeholder = "Watched Movie (T/F)";
+  }
+
+}
+
+let inputButton = document.createElement('button');
+inputButton.innerHTML = 'save';
+
+form.appendChild(inputButton);
+form.addEventListener("submit", saveMovie);
+jumbotron.appendChild(form);
+
+function saveMovie(event){
+  event.preventDefault();
+
+    let addingAnewMovie = {
+      title: document.querySelector('#input1').value,
+      director: document.querySelector('#input2').value,
+      type: document.querySelector('#input3').value,
+      haveWatched: document.querySelector('#input4').value,
+    };
+
+    addMovie(addingAnewMovie);
+  showMovies();
+
+  document.querySelector('#input1').value = '';
+  document.querySelector('#input2').value = '';
+  document.querySelector('#input3').value = '';
+  document.querySelector('#input4').value = '';
+ 
+}
+//jumbotron.innerHTML = addingAnewMovie;
+// saveMovie(addingAnewMovie);
+
+

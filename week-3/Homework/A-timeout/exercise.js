@@ -39,4 +39,14 @@ var colors = ['red', 'green', 'black', 'blue','pink']
     }
 
 
-setInterval(changeInColors, 3000);
+setInterval(changeInColors, 2000);
+
+// function getRandomColor() {
+//     let randomColor = "#" + (Math.floor(Math.random()*16777215).toString(16)) ;
+//     return randomColor;
+// }
+
+// function setBackground() {
+//     document.querySelector("body").style.backgroundColor = getRandomColor();
+// }
+// setInterval(setBackground, 1000);

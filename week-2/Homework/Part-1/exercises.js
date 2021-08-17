@@ -94,9 +94,12 @@ shoppingItem.forEach((item) => {
 **/
 function exerciseThree(books) {
   //Write your code in here
-
-   elementP =  document.createElement('p')
+ 
+   
    elementUL =  document.createElement('ul')
+   books.forEach((book) => {
+    elementP =  document.createElement('p')
+   })
   
 }
 
