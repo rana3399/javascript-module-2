@@ -30,7 +30,9 @@ function timeOutFunc(time){
         let seconds = timeParsed - (minutes*60);
          return minutes + ":" +  seconds;
     }
+    if (time < 10) {return "00:0" + time}
     else if (time <=59 && time >=10){ return "00:" + time}
+    
     else { return "00:0" + time}
 }
 
